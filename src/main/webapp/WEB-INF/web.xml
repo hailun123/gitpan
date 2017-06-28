@@ -52,11 +52,14 @@
   	<listener>
   		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   	</listener>
-
+	<!--配置RequestContextListener监听器作用是普通类中也可以request和session对象-->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
   	<!-- 加载解析spring相关配置文件 -->
   	<context-param>
     	<param-name>contextConfigLocation</param-name>
-    	<param-value>classpath:application-Context.xml</param-value>
+		<param-value>classpath:application-*.xml</param-value>
     </context-param>
 
 
@@ -78,16 +81,21 @@
 	 <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
 
-	<!--配置RequestContextListener监听器作用是普通类中也可以request和session对象-->
-	<listener>
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-	</listener>
-
+	<!-- session超时时间/过期时间，默认为30分钟 -->
 	<!-- session超时时间/过期时间，默认为30分钟 -->
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
 
+	<!--  验证码 -->
+	<servlet>
+		<servlet-name>imageCode</servlet-name>
+		<servlet-class>com.jk.util.ImageCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>imageCode</servlet-name>
+		<url-pattern>/imageCode</url-pattern>
+	</servlet-mapping>
 
 
 
