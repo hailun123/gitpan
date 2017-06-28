@@ -112,5 +112,10 @@ public class ItemController {
     }
 
 
+    public void toHehe(){
+        System.out.print("aaa");
+    }
+
+
 }
 
