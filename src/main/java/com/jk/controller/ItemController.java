@@ -107,5 +107,10 @@ public class ItemController {
     }
 
 
+    public void toHa(){
+        System.out.print("aaa");
+    }
+
+
 }
 
