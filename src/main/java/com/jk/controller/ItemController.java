@@ -113,7 +113,7 @@ public class ItemController {
 
 
     public void toHehe(){
-        System.out.print("aaa");
+        System.out.print("1234567890fwetgrdthr");
     }
 
 
